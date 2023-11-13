@@ -6,6 +6,7 @@ import Location from './Location.svg';
 import Phone from './Phone.svg';
 import Mail from './Mail.svg';
 import Vector from './Vector.svg';
+// hero-section
 export const Hero = () => {
     return (
         <div className="hero-section">
