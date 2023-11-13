@@ -17,7 +17,7 @@ function App() {
       <Process />
       <Form />
       <Footer />
-    </div>
+    </div> 
   );
 }
 
