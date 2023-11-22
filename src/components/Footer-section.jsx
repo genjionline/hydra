@@ -12,7 +12,7 @@ export const Footer = () => {
         <div className="footer-section">
             <div className="footer-section__container">
                 <img className="footer-section__container__logo" src={Frame} alt="" />
-                <img src={Vector20} alt="" />
+                <img className="Vector20" src={Vector20} alt="" />
                 <div>
                     <ul className="footer-section__container__list">
                         <a href="https://google.com"><li className="footer-section__container__list__item">ABOUT</li></a>
@@ -22,7 +22,7 @@ export const Footer = () => {
                         <a href="https://google.com"><li className="footer-section__container__list__item">JOIN HYDRA</li></a>
                     </ul>
                 </div>
-                <img src={Vector20} alt="" />
+                <img className="Vector20" src={Vector20} alt="" />
                 <div>
                     <ul className="footer-section__container__list">
                         <a href="https://google.com"><li className="footer-section__container__list__item">F.A.Q</li></a>
@@ -31,7 +31,7 @@ export const Footer = () => {
                         <a href="https://google.com"><li className="footer-section__container__list__item">LICENSES</li></a>
                     </ul>
                 </div>
-                <img src={Vector20} alt="" />
+                <img className="Vector20" src={Vector20} alt="" />
                 <div className="footer-section__container__media">
                     <h4 className="footer-section__container__social">SOCIALIZE WITH HYDRA</h4>
                     <div className="footer-section__container__social__icons">

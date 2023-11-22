@@ -1,5 +1,9 @@
 import ArrowRight from './ArrowRight.svg';
 import ArrowSmallRight from './ArrowSmallRight.svg';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 export const Process = () => {
     return (
         <div className="process-section">
@@ -49,6 +53,48 @@ User Testing</h3>
 Deploy</h3>
                     </div>
                 </div>
+            </div>
+            <div className="process-section__steps-swiper">
+                <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    onSlideChange={() => console.log('slide change')}
+                    navigation
+                    onSwiper={(swiper) => console.log(swiper)}
+                >
+                    <SwiperSlide><div className="process-section__steps__item">
+                    <div className="process-section__steps__item__number">01</div>
+                    <div className="process-section__steps__item__name">
+                        <img src={ArrowSmallRight} alt="" />
+                        <h3 className="process-section__steps__item__name__title">3D Conception<br/>
+& Design</h3>
+                    </div>
+                </div></SwiperSlide>
+                    <SwiperSlide><div className="process-section__steps__item">
+                    <div className="process-section__steps__item__number">02</div>
+                    <div className="process-section__steps__item__name">
+                        <img src={ArrowSmallRight} alt="" />
+                        <h3 className="process-section__steps__item__name__title">Interaction<br/>
+Design</h3>
+                    </div>
+                </div></SwiperSlide>
+                    <SwiperSlide><div className="process-section__steps__item">
+                    <div className="process-section__steps__item__number">03</div>
+                    <div className="process-section__steps__item__name">
+                        <img src={ArrowSmallRight} alt="" />
+                        <h3 className="process-section__steps__item__name__title">VR World<br/>
+User Testing</h3>
+                    </div>
+                </div></SwiperSlide>
+                    <SwiperSlide><div className="process-section__steps__item">
+                    <div className="process-section__steps__item__number">04</div>
+                    <div className="process-section__steps__item__name">
+                        <img src={ArrowSmallRight} alt="" />
+                        <h3 className="process-section__steps__item__name__title">Hydra VR<br/>
+Deploy</h3>
+                    </div>
+                </div></SwiperSlide>
+                </Swiper>
             </div>
         </div>
     )

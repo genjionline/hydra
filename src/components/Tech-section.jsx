@@ -3,6 +3,10 @@ import HydraTech1 from './HydraTech1.png';
 import HydraTech2 from './HydraTech2.png';
 import HydraTech3 from './HydraTech3.png';
 import HydraTech4 from './HydraTech4.png';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 export const Tech = () => {
     return (
         <div className="tech-section">
@@ -26,6 +30,29 @@ export const Tech = () => {
                 <div className="partners__item-4">
                     <img src={HydraTech4} alt="" />
                 </div>
+            </div>
+            <div className="partners-swiper">
+                <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    onSlideChange={() => console.log('slide change')}
+                    navigation
+                    onSwiper={(swiper) => console.log(swiper)}
+                >
+                    <SwiperSlide><div className="partners__item-1">
+                    <img src={HydraTech1} alt="" />
+                </div></SwiperSlide>
+                    <SwiperSlide><div className="partners__item-2">
+                    <img src={HydraTech3} alt="" />
+                </div></SwiperSlide>
+                    <SwiperSlide><div className="partners__item-3">
+                    <img src={HydraTech2} alt="" />
+                </div></SwiperSlide>
+                    <SwiperSlide><div className="partners__item-4">
+                    <img src={HydraTech4} alt="" />
+                </div></SwiperSlide>
+    </Swiper>
             </div>
         </div>
     )

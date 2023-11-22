@@ -6,8 +6,19 @@ import Location from './Location.svg';
 import Phone from './Phone.svg';
 import Mail from './Mail.svg';
 import Vector from './Vector.svg';
-// hero-section
+import HamburgerButton from './HamburgerButton.svg';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { useState } from "react";
+
+
 export const Hero = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleMenu = () => {
+        setIsOpen((open) => !open)
+    }
     return (
         <div className="hero-section">
             <div className="header">
@@ -20,7 +31,8 @@ export const Hero = () => {
                     </a>
                     
                 </div>
-                <div className="hero-section__header__nav">
+                
+                <div className={`hero-section__header__nav ${isOpen ? "is-open" : ""}`}>
                     <ul className="hero-section__header__nav__list">
                         <li className="hero-section__header__nav__list__item"><a href="https://google.com">ABOUT</a></li>
                         <li className="hero-section__header__nav__list__item"><a href="https://google.com">SERVICES</a></li>
@@ -28,6 +40,7 @@ export const Hero = () => {
                         <li className="hero-section__header__nav__list__item"><a href="https://google.com">HOW TO</a></li>
                     </ul>
                 </div>
+                <img className="HamburgerButton" src={HamburgerButton} alt="" onClick={toggleMenu} />
                 <div className="hero-section__header__buttons">
                     <a href="https://google.com"><div className="hero-section__header__buttons__contact">CONTACT US</div></a>
                     <a href="https://google.com"><div className="hero-section__header__buttons__join">JOIN HYDRA</div></a>
@@ -76,6 +89,38 @@ nisl tincidunt eget. Lectus mauris eros in vitae.</p>
                         <p className="footer__container__contact"><a href="mailto:Contact@HydraVTech.com">Contact@HydraVTech.com</a></p>
                     </div>
                 </div>
+            </div>
+            <div className="footer-swiper">
+                <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    onSlideChange={() => console.log('slide change')}
+                    navigation
+                    onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide><div className="footer__container">
+                    <img className="footer__container__picture" src={Location} alt="" />
+                    <div className="footer__container__info">
+                        <p className="footer__container__name">Pay Us a Visit</p>
+                        <p className="footer__container__contact">Union St, Seattle, WA 98101, United States</p>
+                    </div>
+                </div></SwiperSlide>
+      <SwiperSlide><div className="footer__container">
+                    <img className="footer__container__picture" src={Phone} alt="" />
+                    <div className="footer__container__info">
+                        <p className="footer__container__name">Give Us a Call</p>
+                        <p className="footer__container__contact"><a href="tel:+110) 1111-1010">(110) 1111-1010</a></p>
+                    </div>
+                </div></SwiperSlide>
+      <SwiperSlide><div className="footer__container">
+                    <img className="footer__container__picture" src={Mail} alt="" />
+                    <div className="footer__container__info">
+                        <p className="footer__container__name">Send Us a Message</p>
+                        <p className="footer__container__contact"><a href="mailto:Contact@HydraVTech.com">Contact@HydraVTech.com</a></p>
+                    </div>
+                    </div></SwiperSlide>
+    </Swiper>
             </div>
         </div>
     )
